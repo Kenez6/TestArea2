@@ -58,5 +58,5 @@ button:hover{
   }
   .box:hover{
     box-shadow: 2px 2px 2px 2px lightgray;
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
