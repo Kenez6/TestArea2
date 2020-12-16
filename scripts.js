@@ -43,7 +43,7 @@ let planets = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune];
 var counter = 0;
 
 function countingUP(){
-    if(counter==7){
+    if(counter == 7){
         counter=0;
     }
     else {
@@ -51,7 +51,7 @@ function countingUP(){
     return counter;
 }
 function countingDown(){
-    if(counter ==0){
+    if(counter == 0){
         counter=7;
     }
     else{
@@ -62,25 +62,30 @@ function changeData(){
     $('#planet').attr('src', planets[counter].photo);
     $('#imageTitle').replaceWith('<h1 id="imageTitle">'+planets[counter].title+'</h1>');
     $('#imageDescription').replaceWith('<p id="imageDescription">'+planets[counter].description+'</p>');
-}
+};
  $('#left').on('click',() => {
     countingDown();
     changeData();
     
- })
+    
+ });
  $('#right').on('click',() => {
     countingUP();
     changeData();
     
+    
 })
 planets.forEach((item,index) => {
-    $('#thumbnails').append(`<div class="box" data-index="${index}" style="background-image: url('${planets[index].photo}');"></div>`)
+    $('#thumbnails').append(`<div class="box" data-index="${index}" style="background-image: url('${planets[index].photo}');"><h2>${planets[index].title}</h2></div>`)
     });
+    
+    
    
 $('.box').on('click',(event)=>{
-    counter = $(event.target).attr('data-index');
+    counter = parseInt($(event.target).attr('data-index'));
     changeData();
     return counter;
 });
+
 
 

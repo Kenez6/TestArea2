@@ -5,10 +5,8 @@ html {
     
 }
 main{
-    
-    
     justify-content: center;
-
+    
 }
 button {
     border: none;
@@ -29,6 +27,8 @@ button:hover{
     margin:20px;
     position: relative;
     box-shadow: 10px 10px 5px grey;
+    margin: auto;
+    
 }
 #textOnPic{
     background-color: black;
@@ -43,6 +43,8 @@ button:hover{
 }
 #thumbnails{
     display: flex;
+    margin-top: 40px;
+    justify-content: center;
 }
 .box {
     width: 100px;
@@ -55,8 +57,21 @@ button:hover{
     justify-content: center;
     align-items: center;
     background-size: cover;
+    
   }
   .box:hover{
     box-shadow: 2px 2px 2px 2px lightgray;
     transform: scale(1.2);
+    cursor: pointer;
+  }
+  h2{
+      color: rgb(43, 39, 39);
+      visibility: hidden;
+      text-shadow: 1px 1px grey;
+      cursor: pointer;
+      
+  }
+  .box:hover h2 {
+    visibility: visible;
+    cursor: pointer;
   }
