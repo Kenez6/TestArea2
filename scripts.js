@@ -43,19 +43,19 @@ let planets = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune];
 var counter = 0;
 
 function countingUP(){
-    if(counter==7){
-        counter=0;
+    if(counter == 7){
+        counter == 0;
     }
     else {
-    counter=counter+1}
+    counter += 1}
     return counter;
 }
 function countingDown(){
-    if(counter ==0){
-        counter=7;
+    if(counter == 0){
+        counter == 7;
     }
     else{
-    counter=counter-1}
+    counter -= 1}
     return counter;
 }
 function changeData(){
@@ -78,7 +78,7 @@ planets.forEach((item,index) => {
     });
    
 $('.box').on('click',(event)=>{
-    counter = $(event.target).attr('data-index');
+    counter = parseInt($(event.target).attr('data-index'));
     changeData();
     return counter;
 });
