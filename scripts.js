@@ -58,34 +58,48 @@ function countingDown(){
     counter=counter-1}
     return counter;
 }
+
 function changeData(){
     $('#planet').attr('src', planets[counter].photo);
     $('#imageTitle').replaceWith('<h1 id="imageTitle">'+planets[counter].title+'</h1>');
     $('#imageDescription').replaceWith('<p id="imageDescription">'+planets[counter].description+'</p>');
+
 };
+
+function highlight(){
+    ($('.box').css('transform', 'scale(1)'));
+    ($('.planetname').css('visibility', 'hidden')); 
+    ($('#'+counter).css('transform', 'scale(1.2)')); 
+    ($('#name-'+counter).css('visibility', 'visible')); 
+}
+$( document ).ready(function() {
+    highlight();
+});
+
  $('#left').on('click',() => {
     countingDown();
     changeData();
-    
+    highlight();
     
  });
  $('#right').on('click',() => {
     countingUP();
     changeData();
-    
+    highlight();
     
 })
 planets.forEach((item,index) => {
-    $('#thumbnails').append(`<div class="box" data-index="${index}" style="background-image: url('${planets[index].photo}');"><h2>${planets[index].title}</h2></div>`)
-    });
+    $('#thumbnails').append(`<div class="box" id="${index}" style="background-image: url('${planets[index].photo}');"><h2 id="name-${index}" class='planetname'>${planets[index].title}</h2></div>`)
     
-    
-   
+});
+
 $('.box').on('click',(event)=>{
-    counter = parseInt($(event.target).attr('data-index'));
+    counter = parseInt($(event.target).attr('id'));
     changeData();
+    highlight();
     return counter;
 });
+
 
 
 

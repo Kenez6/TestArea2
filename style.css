@@ -58,8 +58,9 @@ button:hover{
     align-items: center;
     background-size: cover;
     
+    
   }
-  .box:hover{
+ .box:hover{
     box-shadow: 2px 2px 2px 2px lightgray;
     transform: scale(1.2);
     cursor: pointer;
@@ -70,8 +71,9 @@ button:hover{
       text-shadow: 1px 1px grey;
       cursor: pointer;
       
+      
   }
-  .box:hover h2 {
+  .box:hover .planetname {
     visibility: visible;
     cursor: pointer;
   }
